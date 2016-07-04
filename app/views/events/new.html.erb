@@ -1,2 +1,18 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<h2>Create Event</h2>
+
+<%= form_for(@event) do |f| %>
+  <ul>
+    <% @event.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+  <% end %>
+  </ul>
+
+  <%= f.label :title, "Event Name" %>
+  <%= f.text_field, :title %>
+
+  <%= f.label :description, "Describe the event!" %>
+  <%= f.text_area, :description %>
+
+  <%= f.submit %>
+
+<% end %>

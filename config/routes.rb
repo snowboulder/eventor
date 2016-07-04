@@ -4,14 +4,6 @@ Rails.application.routes.draw do
 
   get 'event_home/about'
 
-  get 'events/show'
-
-  get 'events/index'
-
-  get 'events/new'
-
-  get 'events/create'
-
   root 'event_home#home'
 
   devise_for :users, controllers: { sessions: "users/sessions" }, path: "auth",

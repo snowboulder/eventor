@@ -3,6 +3,12 @@
 <p>
   This is your profile stats<br>
   Email: <%= @user.email %>
+  <br>
+  All events created:
+  <br>
+  <% @events.each do |e| %>
+    <%= e.created_events.title %>
+  <% end %>
 
 
 </p>

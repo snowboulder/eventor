@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'events/show'
+
+  get 'events/index'
+
+  get 'events/new'
+
+  get 'events/create'
+
   root 'welcome#index'
 
   devise_for :users, controllers: { sessions: "users/sessions" }, path: "auth",

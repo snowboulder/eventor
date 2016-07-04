@@ -1,8 +1,17 @@
 <h1>Eventor</h1>
+<%= link_to "About Us", event_home_about_path %>
+<br>
 <p>All private events hosted here!</p>
 
 Come register and host your private events!
 
-<%= link_to "Sign up for free now!", new_user_registration_path %>
+<br>
+<br>
 
-<%= link_to "Have an account? Login here!", new_user_session_path %>
+<% if user_signed_in? %>
+
+<% else %>
+  <%= link_to "Have an account? Login here!", new_user_session_path %>
+  <br>
+  <%= link_to "If not, Sign up for free now!", new_user_registration_path %>
+<% end %>

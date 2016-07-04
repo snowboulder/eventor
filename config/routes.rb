@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'event_home/home'
+
+  get 'event_home/about'
+
   get 'events/show'
 
   get 'events/index'
@@ -8,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'events/create'
 
-  root 'welcome#index'
+  root 'event_home#home'
 
   devise_for :users, controllers: { sessions: "users/sessions" }, path: "auth",
               path_names: { sign_in: 'login', sign_out: 'logout' }

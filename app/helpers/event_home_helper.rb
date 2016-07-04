@@ -1,0 +1,2 @@
+module EventHomeHelper
+end

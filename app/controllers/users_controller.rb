@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
   def invite
     user_invited = User.find(params[:user_id])
-    event_user_invited_to = Event.find(params([:event_id])
-    user_invited.events << event_user_invited_to
+    event_user_invited_to = Event.find(params[:event_id])
+    user_invited.attended_events << event_user_invited_to
     redirect_to @event
   end
 

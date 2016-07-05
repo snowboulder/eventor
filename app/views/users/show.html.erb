@@ -14,16 +14,24 @@
 
 <h4>Upcoming Events</h4>
 <ul>
-  <%= @upcoming_events.each do |u| %>
-    <li><%= u.title %></li>
+  <% if @upcoming_events.any? %>
+    <%= @upcoming_events.each do |u| %>
+      <li><%= u.title %></li>
+    <% end %>
+  <% else %>
+    <p>No Upcoming Events</p>
   <% end %>
 </ul>
 <br>
 
 <h4>Previous Events</h4>
 <ul>
-  <%= @prev_events.each do |p| %>
-    <li><%= p.title %></li>
+  <% if @past_events.any? %>
+    <%= @past_events.each do |p| %>
+      <li><%= p.title %></li>
+    <% end %>
+  <% else %>
+    <p>No Past Events</p>
   <% end %>
 </ul>
 

@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'event_home/home'
-
-  get 'event_home/about'
-
   root 'event_home#home'
-
-  devise_for :users, controllers: { sessions: "users/sessions" }, path: "auth",
-              path_names: { sign_in: 'login', sign_out: 'logout' }
-
 
   resources :users, only: [:show, :index]
   resources :events
 
+  devise_for :users, controllers: { sessions: "users/sessions" }, path: "auth",
+              path_names: { sign_in: 'login', sign_out: 'logout' }
+
+  get 'event_home/home'
+  get 'event_home/about'
+
+  post '/invite', to: 'users#invite'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

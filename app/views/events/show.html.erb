@@ -4,3 +4,10 @@
 by <h4><%= @event.creator %>
 <br>
 <p><%= @event.description %></p>
+
+<h3>List of Attendees</h3>
+<p>
+  <%= attendees.each do |a| %>
+    <%= a.name %>
+  <% end %>
+</p>

@@ -8,7 +8,9 @@
   <br>
   <% @events.each do |e| %>
     <%= e.created_events.title %>
+    <br>
   <% end %>
 
-
 </p>
+
+<%= link_to "Home Page", root_path %>

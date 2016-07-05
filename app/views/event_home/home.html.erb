@@ -11,7 +11,7 @@ Come register and host your private events!
 <br>
 
 <% if user_signed_in? %>
-
+  <%= link_to "Check Profile", user_path(@user) %>
 <% else %>
   <%= link_to "Have an account? Login here!", new_user_session_path %>
   <br>
